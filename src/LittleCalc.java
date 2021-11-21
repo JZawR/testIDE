@@ -9,19 +9,19 @@ public class LittleCalc {
         do {
             BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 
-
-
             try {
                 CheckInput check = new CheckInput(input.readLine());
                 System.out.println(OperationType.calculate(check));
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 e.printStackTrace();
-            } catch (IllegalArgumentException e) {
+            }
+            catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
+                System.exit(0);
             }
         }
-        while(u == true);
-
+        while(u);
     }
 }
 

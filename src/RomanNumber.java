@@ -1,7 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public enum RomanNumber {
@@ -17,7 +16,6 @@ public enum RomanNumber {
     }
 
     public static List<RomanNumber> reversedRomanNumber(){
-        //System.out.println("мы в обратном Енуме");
         return Arrays.stream(values()).sorted(Comparator.comparing(RomanNumber::getValue).reversed()).collect(Collectors.toList());
     }
 
@@ -34,10 +32,9 @@ public enum RomanNumber {
     }
 
     public static int parseToArab(String s){
-        if (s.isEmpty()||s==null) throw new IllegalArgumentException("Строка пуста");
+        if (s.isEmpty()) throw new IllegalArgumentException("Строка пуста");
     int i = 0;
     int result = 0;
-        //System.out.println("mi v parseToArab");
         //System.out.println(s);
     while ((s.length()>0) && (i<RomanNumber.values().length))
     if (s.startsWith(String.valueOf(reversedRomanNumber().get(i)))){

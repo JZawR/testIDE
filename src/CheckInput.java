@@ -33,11 +33,11 @@ public class CheckInput {
         s2 = s2.toUpperCase();
         if ((s1.matches(arabicRegexp)) && s2.matches(arabicRegexp)){
             this.roma = false;
-            //System.out.println("Арабские "+!this.roma);
+
         }
         else if ((s1.matches(romeRegexp)) && s2.matches((romeRegexp))){
             this.roma = true;
-            //System.out.println("Римские "+this.roma);
+
         }
         else if (((s1.matches(arabicRegexp)) && s2.matches((romeRegexp))) || ((s1.matches(romeRegexp)) && s2.matches((arabicRegexp)))) {
             throw new IllegalArgumentException("используются одновременно разные системы счисления");
@@ -55,15 +55,12 @@ public class CheckInput {
         if(!this.roma){
             first = Integer.parseInt(this.s1);
             second = Integer.parseInt(this.s2);
-            //System.out.println("Арабские записались успешно");
         }
         else if (this.roma){
-            //System.out.println("Римские пытаются записаться");
             first = RomanNumber.parseToArab(this.s1);
             second = RomanNumber.parseToArab(this.s2);
-            //System.out.println("Римские записались успешно");
         }
-        int[] result = new int[]{first, second};
+        int[] result = {first, second};
         return result;
     }
 

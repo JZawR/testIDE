@@ -15,7 +15,7 @@ public class OperationType {
         int z = operation(checkInput);
         String result;
         if(checkInput.roma()){
-            result = (RomanNumber.parseToRoman((int) z));
+            result = (RomanNumber.parseToRoman(z));
         }
         else result = String.valueOf(z);
         return result;
